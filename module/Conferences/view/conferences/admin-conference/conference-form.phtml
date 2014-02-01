@@ -1,0 +1,34 @@
+<h1><?php echo $this->title?></h1>
+
+<div>
+<?php 
+
+$form = $this->form;
+
+$form->prepare();
+
+// open form tag
+echo $this->form()->openTag($form);
+?>
+
+<?php 
+// print form elements
+$elements = $form->getElements();
+foreach ($elements as $element) {  
+?>
+    <div class="control-group">
+        <?php if (!($element instanceof \Zend\Form\Element\Button)) { echo $this->formLabel($element); } ?>
+        <div class="controls">
+            <?php
+            echo $this->formElement($element); 
+            echo $this->formElementErrors($element);
+            ?>
+        </div>
+    </div>
+<?php } ?> 
+
+<?php 
+// close form tag
+echo $this->form()->closeTag($form);
+?>
+</div>

@@ -10,10 +10,12 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
+        'ZfcAdmin',
         'BjyAuthorize',
         
         // app modules
         'Application',
+        'Conferences',
         
     ),
 

@@ -1,0 +1,62 @@
+<?php
+
+namespace Conferences\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Conferences\Entity\Conference
+ *
+ * @ORM\Table(name="conference")
+ * @ORM\Entity(repositoryClass="Conferences\Entity\Repository\ConferenceRepository")
+ *
+ */
+class Conference {
+
+	/**
+	 * @var integer $id
+	 *
+	 * @ORM\Column(type="integer", nullable=false)
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="SEQUENCE")
+	 * @ORM\SequenceGenerator(sequenceName="conference_id_seq", allocationSize=1, initialValue=1)
+	 */
+    private $id;
+
+    /**
+     * @var string $title
+     *
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string $abstract
+     *
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $abstract;
+
+    /**
+     * @var \DateTime $datefrom
+     *
+     * @ORM\Column(type="date", nullable=false)
+     */
+    private $datefrom;
+
+    /**
+     * @var \DateTime $dateto
+     *
+     * @ORM\Column(type="date", nullable=false)
+     */
+    private $dateto;
+    
+    /**
+     * @var string $city
+     *
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $city;
+
+    
+}
