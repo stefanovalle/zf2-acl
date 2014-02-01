@@ -9,6 +9,10 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*"
+        "zendframework/zendframework": "2.2.5",
+        "doctrine/doctrine-orm-module": "0.7.*",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zf-commons/zfc-user-doctrine-orm": "0.1.1",
+        "bjyoungblood/bjy-authorize": "1.4.0"
     }
 }
