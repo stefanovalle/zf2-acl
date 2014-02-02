@@ -6,6 +6,7 @@ use Zend\Permissions\Acl\Acl;
 use Zend\Permissions\Acl\Resource\ResourceInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use Zend\Permissions\Acl\Assertion\AssertionInterface;
+use Conferences\Entity\Conference;
 
 class CheckUserCountry implements AssertionInterface
 {
@@ -21,7 +22,11 @@ class CheckUserCountry implements AssertionInterface
                            $privilege = null)
     {
         
-       return $resource->getCountry() == $this->loggedUser->getCountry();
+        if ($resource instanceof Conference) {
+            return $resource->getCountry() == $this->loggedUser->getCountry();
+        } else {
+            return true;
+        }
         
     }
 

@@ -107,9 +107,11 @@ return array(
             'BjyAuthorize\Provider\Rule\Config' => array(
                 'allow' => array(
                     
-                    array(array('editor'), 'Conference', array('edit'), 'assertion.CheckUserCountry'),
+                    //array(array('editor'), 'Conference', array('edit'), 'assertion.CheckUserCountry'),
+                    array(array('editor','admin'), 'Conference', array('edit')),
                     
-                    array(array(), 'Conference', array('view'), 'assertion.CheckUserCountry'),
+                    //array(array(), 'Conference', array('view'), 'assertion.CheckUserCountry'),
+                    array(array(), 'Conference', array('view')),
                     
                 ),
             ),
@@ -122,20 +124,33 @@ return array(
                 array('controller' => 'zfcuser', 'roles' => array()),
                 
                 // Restrict access to other pages admin controllers
-                array('controller' => 'ZfcAdmin\Controller\AdminController', 'roles' => array('viewer','editor')),
+                array('controller' => 'ZfcAdmin\Controller\AdminController', 
+                      'roles' => array('viewer','editor','admin')),
                 
                 array('controller' => 'Conferences\Controller\AdminConference', 
                       'action' => array('index','view'),
-                      'roles' => array('viewer','editor')),
+                      'roles' => array('viewer','editor','admin')),
                 
                 array('controller' => 'Conferences\Controller\AdminConference', 
                       'action' => array('edit','remove'), 
-                      'roles' => array('admin','editor')),
+                      'roles' => array('editor','admin')),
                 
                 
                 array('controller' => 'Conferences\Controller\AnotherAdmin', 'roles' => array('viewer','editor')),
                 
                 
+            ),
+        ),
+    ),
+    
+    // Main menu
+    'navigation' => array(
+        'admin' => array(
+            'conferences' => array(
+                'label' => 'Conferences',
+                'route' => 'zfcadmin/conferences',
+                'resource' => 'Conference',
+                'privilege' => 'view',
             ),
         ),
     ),
