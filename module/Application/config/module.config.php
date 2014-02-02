@@ -118,4 +118,14 @@ return array(
         ),
     ),
     
+    'bjyauthorize' => array(
+        'guards' => array(
+            'BjyAuthorize\Guard\Controller' => array(
+                
+                array('controller' => 'Application\Controller\Index', 'roles' => array()),
+                
+            ),
+        ),
+    ),
+    
 );

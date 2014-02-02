@@ -11,7 +11,7 @@ use BjyAuthorize\Provider\Role\ProviderInterface;
  * @ORM\Table(name="systemuser",uniqueConstraints={@ORM\UniqueConstraint(name="email_idx", columns={"email"})})
  * @ORM\Entity(repositoryClass="Application\Entity\Repository\SystemuserRepository")
  */
-class Systemuser implements UserInterface {
+class Systemuser implements UserInterface, ProviderInterface {
     
     /**
      * @var integer

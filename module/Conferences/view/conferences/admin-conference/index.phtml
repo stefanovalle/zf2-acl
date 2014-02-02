@@ -23,9 +23,11 @@
             <td><?php echo $event->getCity()?></td>
             <td>
                 
+                <?php if ($this->isAllowed($event, 'edit')) { ?>
                 <a href="<?php echo $this->url('zfcadmin/conferences/crud', array('action' => 'remove', 'id' => $event->getId()))?>"><i class="icon-trash"></i> Remove</a>
                 <br />
                 <a href="<?php echo $this->url('zfcadmin/conferences/crud', array('action' => 'edit', 'id' => $event->getId()))?>"><i class="icon-pencil"></i> Edit</a>
+                <?php }  ?>
                 
             </td>
         </tr>

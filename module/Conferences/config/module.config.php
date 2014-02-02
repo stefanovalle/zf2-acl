@@ -67,4 +67,44 @@ return array(
       ),
     ),
     
+    'bjyauthorize' => array(
+        
+        'resource_providers' => array(
+            'BjyAuthorize\Provider\Resource\Config' => array(
+                'Conference' => array(),
+            ),
+        ),
+        
+        'rule_providers' => array(
+            'BjyAuthorize\Provider\Rule\Config' => array(
+                'allow' => array(
+                    
+                    // allow all users to view all conferences
+                    array(array('editor'), 'Conference', array('edit')),
+                    
+                ),
+            ),
+        ),
+        
+        'guards' => array(
+            'BjyAuthorize\Guard\Controller' => array(
+                
+                // Enable access to ZFC User pages
+                array('controller' => 'zfcuser', 'roles' => array()),
+                
+                // Restrict access to other pages admin controllers
+                array('controller' => 'ZfcAdmin\Controller\AdminController', 'roles' => array('viewer','editor')),
+                
+                array('controller' => 'Conferences\Controller\AdminConference', 
+                      'action' => array('index','view'),
+                      'roles' => array('viewer','editor')),
+                
+                array('controller' => 'Conferences\Controller\AdminConference', 
+                      'action' => array('edit','remove'), 
+                      'roles' => array('admin','editor')),
+                
+            ),
+        ),
+    ),
+    
 );
