@@ -41,6 +41,7 @@ class Module
             'factories' => array(
                 
                 'Conferences\Controller\AdminConference' => 'Conferences\Controller\AdminConferenceControllerFactory',
+                'Conferences\Controller\AnotherAdmin' => 'Conferences\Controller\AnotherAdminControllerFactory',
                 
             ),
         );

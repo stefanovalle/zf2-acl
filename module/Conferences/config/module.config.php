@@ -31,9 +31,37 @@ return array(
                                     ),
                                 ),
                             ),
+                            
+                        ),
+                    ),
+                    
+                    'anothercontroller' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route' => '/someurl',
+                            'defaults' => array(
+                                'controller' => 'Conferences\Controller\AnotherAdmin',
+                                'action'     => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+
+                            // Event CRUD route
+                            'crud2' => array(
+                                'type' => 'Zend\Mvc\Router\Http\Segment',
+                                'options' => array(
+                                    'route'    => '/:action[/:id]',
+                                    'constraints' => array(
+                                        'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                        'id'         => '[0-9]*',
+                                    ),
+                                ),
+                            ),
 
                         ),
                     ),
+                    
                 ),
             ),
             
@@ -102,6 +130,10 @@ return array(
                 array('controller' => 'Conferences\Controller\AdminConference', 
                       'action' => array('edit','remove'), 
                       'roles' => array('admin','editor')),
+                
+                
+                array('controller' => 'Conferences\Controller\AnotherAdmin', 'roles' => array('viewer','editor')),
+                
                 
             ),
         ),

@@ -18,7 +18,9 @@ class ConferenceServiceFactory implements FactoryInterface {
         // Dependencies are fetched from Service Manager
         $entityManager = $serviceLocator->get('doctrine.entitymanager.orm_default');
         
-        return new ConferenceService($entityManager);
+        $authorize = $serviceLocator->get('BjyAuthorize\Service\Authorize');
+        
+        return new ConferenceService($entityManager, $authorize);
 		
 	}
   
