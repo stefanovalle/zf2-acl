@@ -30,6 +30,8 @@ class Module
                 'Conferences\Service\Conference' => 'Conferences\Service\ConferenceServiceFactory',
                 'Conferences\Form\Conference' => 'Conferences\Form\ConferenceFactory',
 
+                'assertion.CheckUserCountry' => 'Conferences\Assertions\CheckUserCountryFactory',
+                
             ),
     			
     	);

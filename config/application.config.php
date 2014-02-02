@@ -12,6 +12,7 @@ return array(
         'ZfcUserDoctrineORM',
         'ZfcAdmin',
         'BjyAuthorize',
+        'ZendDeveloperTools',
         
         // app modules
         'Application',

@@ -107,8 +107,9 @@ return array(
             'BjyAuthorize\Provider\Rule\Config' => array(
                 'allow' => array(
                     
-                    // allow all users to view all conferences
-                    array(array('editor'), 'Conference', array('edit')),
+                    array(array('editor'), 'Conference', array('edit'), 'assertion.CheckUserCountry'),
+                    
+                    array(array(), 'Conference', array('view'), 'assertion.CheckUserCountry'),
                     
                 ),
             ),

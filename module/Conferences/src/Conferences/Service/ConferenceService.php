@@ -31,7 +31,13 @@ class ConferenceService {
     
     public function getConference($id) {
        
-        return $this->conferenceRepository->find($id);
+        $conference = $this->conferenceRepository->find($id);
+        
+        if (!$this->authorize->isAllowed($conference, 'view')) {
+            throw new UnAuthorizedException();
+        }
+        
+        return $conference;
         
     }
     

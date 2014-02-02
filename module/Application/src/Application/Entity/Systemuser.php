@@ -45,6 +45,13 @@ class Systemuser implements UserInterface, ProviderInterface {
     private $password;
     
     /**
+     * @var string $country
+     *
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $country;
+    
+    /**
      * @var \Application\Entity\Role
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Role")
@@ -168,6 +175,29 @@ class Systemuser implements UserInterface, ProviderInterface {
     {
         return $this->displayname;
     }    
+    
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return Conference
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string 
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
     
     /**
      * Get state.

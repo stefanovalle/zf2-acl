@@ -50,6 +50,10 @@ class AdminConferenceController extends AbstractActionController
         
     }
     
+    public function viewAction() {
+        return new ViewModel(array('conference' => $this->getConferenceFromQuery()));
+    }
+    
     /**
      * Add new conference
      *

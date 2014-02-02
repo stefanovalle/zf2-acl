@@ -58,6 +58,13 @@ class Conference implements ResourceInterface {
      * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $city;
+    
+    /**
+     * @var string $country
+     *
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $country;
 
     /**
      * @var \Application\Entity\Systemuser
@@ -193,6 +200,29 @@ class Conference implements ResourceInterface {
     public function getCity()
     {
         return $this->city;
+    }
+    
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return Conference
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string 
+     */
+    public function getCountry()
+    {
+        return $this->country;
     }
     
     /**

@@ -12,5 +12,17 @@
  */
 
 return array(
-    // ...
+    // Developer Tools Configuration
+    'zenddevelopertools' => array(
+        'profiler' => array(
+            'enabled' => true,
+            'strict' => false,
+        ),
+        'toolbar' => array(
+            'enabled' => true,
+            'auto_hide' => false,
+            'position' => 'bottom',
+            'version_check' => true,
+        ),
+    ),
 );

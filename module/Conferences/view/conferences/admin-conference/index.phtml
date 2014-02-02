@@ -17,7 +17,13 @@
         <?php foreach($this->conferences as $event) {?>
         <tr>
             <td><?php echo $event->getId()?></td>
-            <td><a href="<?php echo $this->url('zfcadmin/conferences/crud', array('action' => 'view', 'id' => $event->getId()))?>"><?php echo $event->getTitle()?></a>
+            <td>
+                
+                <?php if ($this->isAllowed($event, 'view')) { ?>
+                    <a href="<?php echo $this->url('zfcadmin/conferences/crud', array('action' => 'view', 'id' => $event->getId()))?>"><?php echo $event->getTitle()?></a>
+                <?php } else {
+                    echo $event->getTitle();
+                }?>
             </td>
             <td><?php echo 'from ' . $event->getDatefrom()->format('Y-m-d') . ' to ' . $event->getDateto()->format('Y-m-d')?></td>
             <td><?php echo $event->getCity()?></td>
