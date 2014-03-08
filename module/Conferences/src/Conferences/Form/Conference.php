@@ -3,8 +3,7 @@
 namespace Conferences\Form;
 
 use Zend\Form\Form,
-    Zend\Form\Element,
-    Zend\Validator;
+    Zend\Form\Element;
 use Doctrine\Common\Persistence\ObjectManager;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 

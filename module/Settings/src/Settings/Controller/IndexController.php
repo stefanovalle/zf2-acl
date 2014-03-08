@@ -4,7 +4,6 @@ namespace Settings\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use BjyAuthorize\Exception\UnAuthorizedException;
 
 class IndexController extends AbstractActionController
 {
