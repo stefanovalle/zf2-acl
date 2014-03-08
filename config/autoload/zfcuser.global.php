@@ -153,7 +153,7 @@ $settings = array(
      * Accepted values: A valid route name within your application
      *
      */
-    //'login_redirect_route' => 'zfcuser',
+    'login_redirect_route' => 'zfcadmin/conferences',
 
     /**
      * Logout Redirect Route
