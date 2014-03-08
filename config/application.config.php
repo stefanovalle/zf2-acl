@@ -17,6 +17,7 @@ return array(
         // app modules
         'Application',
         'Conferences',
+        'Settings'
         
     ),
 
