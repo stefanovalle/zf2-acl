@@ -128,4 +128,14 @@ return array(
         ),
     ),
     
+    // Main menu
+    'navigation' => array(
+        'admin' => array(
+            'logout' => array(
+                'label' => 'Logout',
+                'route' => 'zfcuser/logout'
+            ),
+        ),
+    ),
+    
 );
