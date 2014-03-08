@@ -132,7 +132,7 @@ return array(
                       'roles' => array('viewer','editor','admin')),
                 
                 array('controller' => 'Conferences\Controller\AdminConference', 
-                      'action' => array('edit','remove'), 
+                      'action' => array('edit','remove','add'), 
                       'roles' => array('editor','admin')),
                 
                 
