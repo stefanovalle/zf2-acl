@@ -25,8 +25,12 @@ class Module
 
         // Add ACL information to the Navigation view helper
         $authorize = $sm->get('BjyAuthorize\Service\Authorize');
-        \Zend\View\Helper\Navigation::setDefaultAcl($authorize->getAcl());
-        \Zend\View\Helper\Navigation::setDefaultRole($authorize->getIdentity());
+        try {
+            \Zend\View\Helper\Navigation::setDefaultAcl($authorize->getAcl());
+            \Zend\View\Helper\Navigation::setDefaultRole($authorize->getIdentity());
+        } catch (\Doctrine\DBAL\DBALException $exception) {
+            // database tables not yet initialized
+        } 
         
     }
 
